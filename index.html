@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+        <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+
+        <title>Frontend Mentor | Multi-step form</title>
+
+        <link rel="stylesheet" type="text/css" href="/assets/themes/style.css" />
+        <script defer src="/assets/src/main.js"></script>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+    <body class="md:bg-blue-50 md:p-20 md:flex md:justify-center md:items-center ">
+        <!-- Sidebar start -->
+        <div class="bg-slate-300 flex flex-col justify-between min-h-screen w-full relative md:flex-row md:bg-white md:min-h-[85vh] md:rounded-3xl md:max-w-screen-xl ">
+            <div id="sideBar" class="flex justify-center item-center pt-10 p-28 w-full h-auto bg-cover bg-center bg-no-repeat mb-8 
+            bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] md:m-6 md:rounded-xl md:justify-center md:items-start md:w-1/4 md:p-0 md:pt-14 md:mr-0 md:min-w-[250px]">
+                <ul class="flex flex-row gap-3 md:flex-col md:gap-10 md:w-max md:p-0">
+                    <li class="flex gap-5 w-full">
+                        <div id="1" class="active-tab side-bar-tab bg-transparent rounded-full border border-white py-1 px-2.5 text-sm  text-white font-semibold h-[30px] w-[29px]">1</div>
+                        <div class="hidden md:flex md:flex-col font-sans">
+                            <p class="text-gray-400 w-fit font-semibold">STEP 1</p>
+                            <p class="text-white font-semibold">YOUR INFO</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 w-full">
+                        <div id="2" class=" side-bar-tab bg-transparent rounded-full border border-white py-1 px-2.5 text-sm  text-white font-semibold h-[30px]">2</div>
+                        <div class="hidden md:flex md:flex-col font-sans">
+                            <p class="text-gray-400 w-fit font-semibold">STEP 2</p>
+                            <p class="text-white font-semibold">SELECT PLAN</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 w-full">
+                        <div id="3" class=" side-bar-tab bg-transparent rounded-full border border-white py-1 px-2.5 text-sm  text-white font-semibold h-[30px]">3</div>
+                        <div class="hidden md:flex md:flex-col">
+                            <p class="text-gray-400 w-fit font-semibold">STEP 3</p>
+                            <p class="text-white font-semibold">ADD-ONS</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 w-full">
+                        <div id="4" class=" side-bar-tab bg-transparent rounded-full border border-white py-1 px-2.5 text-sm  text-white font-semibold h-[30px]">4</div>
+                        <div class="hidden md:flex md:flex-col">
+                            <p class="text-gray-400 w-fit font-semibold">STEP 4</p>
+                            <p class="text-white font-semibold">SUMMARY</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sidebar end -->
+
+            <!-- Step 1 start -->
+
+            <div class="md:w-full md:flex md:justify-between md:items-stretch md:flex-col">
+                <div class="bg-white p-6 rounded-lg m-4 flex flex-col justify-center w-[90%] mx-[5%]  top-24 font-sans absolute
+                md:relative md:w-3/4 md:justify-start md:top-0 md:p-0 md:mx-14 md:pt-14 lg:mx-24">
+                    <div id="firstStep" class="step">
+                        <h2 class="text-3xl font-semibold text-blue-950 mb-2">Personal info</h2>
+                        <p class="text-gray-400 mb-6">Please provide your name, email address, and phone number.</p>
+                        <div class="mt-4">
+                            <span class="absolute right-0 font-bold text-red-500 text-sm hidden alert" >This field is required.</span>
+                            <label for="helper-text-name" class="block mb-2 text-sm font-medium text-blue-950 dark:text-white">Name</label>
+                            <input type="text" id="helper-text-name" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g. Stephen King" />
+                        </div>
+                        <div class="mt-4">
+                            <span class="absolute right-0 font-bold text-red-500 text-sm hidden alert" >This field is required.</span>
+                            <span id="helper-text-email-alert" class="alert absolute right-0 font-bold text-red-500 text-sm hidden" >The email address is not formatted correctly</span>
+                            <label for="helper-text" class="block mb-2 text-sm font-medium text-blue-950 dark:text-white">Email Address</label>
+                            <input type="email" id="helper-text-email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g. stephenking@lorem.com" />
+                        </div>
+                        <div class="mt-4">
+                            <span class="absolute right-0 font-bold text-red-500 text-sm hidden alert" >This field is required.</span>
+                            <label for="helper-text-phone" class="block mb-2 text-sm font-medium text-blue-950 dark:text-white">Phone Number</label>
+                            <input type="number" id="helper-text-phone" aria-describedby="helper-text-explanation" class="bg-gray-50 border
+                            [appearance:textfield] border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g. +1 234 567 890" />
+                        </div>
+                    </div>
+    
+                    <div id="secondStep" class="hidden step">
+                        <h2 class="text-3xl font-semibold text-blue-950 mb-2">Select your plan</h2>
+                        <p class="text-gray-400 mb-6">You have the option of monthly or yearly billing.</p>
+                        <div class="md:flex lg:gap-10 md:justify-between md:gap-2 md:flex-col lg:flex-row">
+                            <div class="plan flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg md:flex-col md:w-full md:items-start hover:cursor-pointer hover:bg-blue-50 hover:border-blue-950">
+                                <div class="flex justify-center items-center mr-4 w-10 h-10 bg-[url('/assets/images/icon-arcade.svg')] md:mb-10"></div>
+                                <div class="flex justify-center items-start flex-col">
+                                    <h2 class="font-semibold text-lg">Arcade</h2>
+                                    <p class="text-gray-400 price-monthly" data-value="9">$9/mo</p>
+                                    <span class="text-gray-400 price-yearly hidden" data-value="90">$90/yr</span>
+                                </div>
+                            </div>
+                            <div  class=" plan flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg md:flex-col md:w-full md:items-start hover:cursor-pointer hover:bg-blue-50 hover:border-blue-950">
+                                <div class="flex justify-center items-center mr-4 w-10 h-10 bg-[url('/assets/images/icon-advanced.svg')] md:mb-10"></div>
+                                <div class="flex justify-center items-start flex-col">
+                                    <h2 class="font-semibold text-lg">Advanced</h2>
+                                    <p class="text-gray-400 price-monthly" data-value="12">$12/mo</p>
+                                    <span class="text-gray-400 price-yearly hidden" data-value="120">$120/yr</span>
+                                </div>
+                            </div>
+                            <div class="plan flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg md:flex-col md:w-full md:items-start hover:cursor-pointer hover:bg-blue-50 hover:border-blue-950">
+                                <div class="flex justify-center items-center mr-4 w-10 h-10 bg-[url('/assets/images/icon-pro.svg')] md:mb-10"></div>
+                                <div class="flex justify-center items-start flex-col">
+                                    <h2 class="font-semibold text-lg">Pro</h2>
+                                    <p class="text-gray-400 price-monthly"data-value="15">$15/mo</p>
+                                    <span class="text-gray-400 price-yearly hidden" data-value="150">$150/yr</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center items-center flex-row bg-gray-100 p-2 rounded-lg mt-5">
+                            <span id="toogle-monthly" class="mr-3 text-sm font-medium text-gray-400 dark:text-gray-300 active-toogle">Monthly</span>
+                            <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                <input id="checkbox-toogle" type="checkbox" value="" class="sr-only peer"/>
+                                <div class="w-11 h-6 bg-blue-950 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full
+                                 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white
+                                  after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-950"></div>
+                            </label>
+                            <span id="toogle-yearly" class="ml-3 text-sm font-medium text-gray-400 dark:text-gray-300 toogle">Yearly</span>
+                        </div>
+    
+                        
+                        <div id="plan-alert" class="hidden">
+                            <div  class="flex items-center p-4 mb-4 text-sm text-red-800 mt-10 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                                <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                                </svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                Please select one of the plans to proceed forward.
+                                </div>
+                            </div>
+                        </div>
+                        
+     
+      
+                    </div>
+    
+                    <div id="thirdStep" class="hidden step">
+                        <h2 class="text-3xl font-semibold text-blue-950 mb-2">Pick add-ons</h2>
+                        <p class="text-gray-400 mb-6">Add-ons help enhance your gaming experience.</p>
+                        <div id="item-add-ons" class="item-add-ons flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg hover:bg-blue-50 hover:border-blue-950 hover:cursor-pointer">
+                            <div class="flex justify-between items-center flex-row w-full">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <input id="checked-checkbox" type="checkbox" value="" class="checkbox-add-ons w-6 h-6 md:w-4 md:h-4 border-gray-300 rounded hover:cursor-pointer" />
+                                        <label for="checked-checkbox" class="ml-2 text-gray-900 dark:text-gray-300 font-semibold text-base flex flex-col hover:cursor-pointer">
+                                            <span>Online service</span>
+                                            <span class="text-gray-400 font-normal text-xs md:text-sm inline-block">Access to multiplayer games</span></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#5535fa] font-semibold price-monthly " data-value="1">+$1/mo</p>
+                                    <p class="text-[#5535fa] font-semibold price-yearly hidden" data-value="10">+$10/yr</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-add-ons-2" class="item-add-ons flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg hover:bg-blue-50 hover:border-blue-950 hover:cursor-pointer">
+                            <div class="flex justify-between items-center flex-row w-full">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <input  id="checked-checkbox-2" type="checkbox" value="" class="checkbox-add-ons w-6 h-6 md:w-4 md:h-4 border-gray-300 rounded hover:cursor-pointer" />
+                                        <label for="checked-checkbox-2" class="ml-2 text-gray-900 dark:text-gray-300 font-semibold text-base flex flex-col hover:cursor-pointer"
+                                            >
+                                            <span>Larger storage</span>
+                                            
+    
+                                            <span class="text-gray-400 font-normal text-xs md:text-sm inline-block">Extra 1TB of cloud save</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#5535fa] font-semibold price-monthly" data-value="2">+$2/mo</p>
+                                    <p class="text-[#5535fa] font-semibold price-yearly hidden" data-value="20">+$20/yr</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-add-ons-3" class="item-add-ons flex flex-row items-center mb-6 border border-gray-400 p-4 rounded-lg hover:bg-blue-50 hover:border-blue-950 hover:cursor-pointer">
+                            <div class="flex justify-between items-center flex-row w-full">
+                                <div>
+                                    <div class="flex items-center gap-2 w-full">
+                                        <input  id="checked-checkbox-3" type="checkbox" value="" class="checkbox-add-ons w-6 h-6 md:w-4 md:h-4 border-gray-300 rounded hover:cursor-pointer" />
+                                        <label for="checked-checkbox-3" class="ml-2 text-gray-900 dark:text-gray-300 font-semibold text-base flex flex-col hover:cursor-pointer">
+                                            <span>Customizable Profile</span>
+                                             <span class="text-gray-400 font-normal text-xs md:text-sm inline-block">Custom theme on your profile</span></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#5535fa] font-semibold price-monthly" data-value="2">+$2/mo</p>
+                                    <p class="text-[#5535fa] font-semibold price-yearly hidden" data-value="20">+$20/yr</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id="fourthStep" class="hidden step">
+                        <h2 class="text-3xl font-semibold text-blue-950 mb-2">Finishing up</h2>
+                        <p class="text-gray-400 mb-6">Double-check everything looks OK before confirming.</p>
+                        <div class="flex flex-col items-center mb-6 border p-6 rounded-lg bg-blue-50 border-blue-50">
+                            <div class="flex flex-row justify-between items-center w-full pb-4 border-b">
+                                <div>
+                                    <p class="font-bold text-blue-950"><span id="results-plan">Arcade</span> <span id="results-period"></span> </p>
+                                    <button id="change-btn" class="underline text-gray-400 text-sm hover:text-[#5535fa] hover:font-semibold">Change</button>
+                                </div>
+                                <div id="results-plan-price" class="font-bold text-blue-950">
+                                   
+                                </div>
+                            </div>
+    
+                            <div class="w-full">
+                                <ul id="results-add-ons" class="flex flex-col justify-between gap-4 mt-4">
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="flex flex-row justify-between items-center w-full p-4">
+                            <p class="text-gray-400" id="results-period-total"></p>
+                            <p class="text-[#5535fa] font-bold text-lg"><span id="results-total-price"></span>/<span id="results-period-total-price"></span></p>
+                        </div>
+           
+                    </div>
+    
+                    <div id="lastStep" class="hidden step min-h-full justify-center items-center">
+                        <div class="flex flex-col justify-center items-center mb-6 p-6 min-h-full pb-14">
+                            <div class=" w-20 h-20 bg-[url('/assets/images/icon-thank-you.svg')]"></div>
+                            <h2 class="text-3xl font-bold text-blue-950 mb-4 mt-6">Thank you!</h2>
+                            <p class="text-gray-400 mb-6 text-center"> Thanks for confirming your subscription! We hope you have fun 
+                                using our platform. If you ever need support, please feel free 
+                                to email us at support@loremgaming.com.</p>
+                        </div>      
+                    </div>
+                </div>                
+                
+                <div id="footer" class="flex justify-end m-0 bg-white absolute bottom-5 w-full md:right-0 md:bg-transparent py-5 px-[5%] md:relative md:w-3/4 md:justify-start md:top-0 md:p-0 md:mx-14 md:pb-14 lg:mx-24">
+                    <div class="flex justify-between flex-row-reverse bg-white w-full">
+                        <button id="next-btn" type="button" class="text-white bg-blue-950 hover:bg-blue-800 font-medium rounded-md text-sm 
+                        px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Next Step</button>
+                        <button id="confirm-btn" type="button" class="hidden text-white bg-[#493dff] hover:bg-blue-800 font-medium rounded-md text-sm 
+                        px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirm</button>
+                        <button id="go-back-btn" type="button" class="text-gray-400 font-medium text-sm py-2.5 hover:text-[#5535fa]">Go Back</button>
+                    </div>
+                </div>
+            
+            </div>
+
+            
+        </div>
+
+        <div class="attribution md:hidden block">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Andrei Cozma</a>.</div>
+    </body>
+</html>
