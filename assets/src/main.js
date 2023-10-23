@@ -76,19 +76,28 @@ function firstPageActions(){
     const email = inputEmail.value
 
     inputsFirstStep.forEach(function(input){
-        if (input.value !== '' ) {
-            if (isValidEmail(email)) {
-                inputEmailAlert.classList.add('hidden')
-            } else {
-                inputEmailAlert.classList.remove('hidden')
-            }   
+        console.log(input.getAttribute('id'));
+        if (input.value !== '' ) { 
             input.parentElement.firstElementChild.classList.add('hidden')
             input.classList.remove('alert-input')
               
         } else {
             input.parentElement.firstElementChild.classList.remove('hidden')
             input.classList.add('alert-input')
-            inputEmailAlert.classList.add('hidden')
+        }
+
+
+        if (input.getAttribute('id') === 'helper-text-email') {
+            if (input.value !== '' ) {
+                if (isValidEmail(email)) {
+                    inputEmailAlert.classList.add('hidden')
+                } else {
+                    inputEmailAlert.classList.remove('hidden')
+                }   
+                  
+            } else {
+                inputEmailAlert.classList.add('hidden')
+            }
         }
         
     })
@@ -266,11 +275,12 @@ nextBtn.addEventListener('click', function(){
 const resultsAddOns = document.getElementById('results-add-ons')
 const addOns = document.querySelectorAll('.item-add-ons')
 
-addOns.forEach(function(addOn){
-    addOn.addEventListener('click', function(){
-        addOn.querySelector('input').click()
-    })
-})
+// addOns.forEach(function(addOn){
+//     addOn.addEventListener('click', function(){
+//         addOn.querySelector('input').click()
+//         console.log(addOn.querySelector('input'))
+//     })
+// })
 
 checkboxAddOns.forEach(function(checkboxAddOn){
     checkboxAddOn.addEventListener('change', function(event){
